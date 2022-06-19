@@ -1,24 +1,17 @@
-import logo from './logo.svg';
+
+import BreweryContainer from './containers/BreweryContainer';
+
 import './App.css';
 
 function App() {
+
+  const states = [{ state_name: "Alabama", state_abbv: "AL", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Alaska", state_abbv: "AK", createdAt: new Date(), updatedAt: new Date() }, { state_name: "American Samoa", state_abbv: "AS", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Arizona", state_abbv: "AZ", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Arkansas", state_abbv: "AR", createdAt: new Date(), updatedAt: new Date() }, { state_name: "California", state_abbv: "CA", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Colorado", state_abbv: "CO", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Connecticut", state_abbv: "CT", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Delaware", state_abbv: "DE", createdAt: new Date(), updatedAt: new Date() }, { state_name: "District Of Columbia", state_abbv: "DC", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Federated States Of Micronesia", state_abbv: "FM", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Florida", state_abbv: "FL", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Georgia", state_abbv: "GA", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Guam", state_abbv: "GU", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Hawaii", state_abbv: "HI", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Idaho", state_abbv: "ID", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Illinois", state_abbv: "IL", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Indiana", state_abbv: "IN", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Iowa", state_abbv: "IA", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Kansas", state_abbv: "KS", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Kentucky", state_abbv: "KY", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Louisiana", state_abbv: "LA", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Maine", state_abbv: "ME", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Marshall Islands", state_abbv: "MH", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Maryland", state_abbv: "MD", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Massachusetts", state_abbv: "MA", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Michigan", state_abbv: "MI", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Minnesota", state_abbv: "MN", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Mississippi", state_abbv: "MS", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Missouri", state_abbv: "MO", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Montana", state_abbv: "MT", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Nebraska", state_abbv: "NE", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Nevada", state_abbv: "NV", createdAt: new Date(), updatedAt: new Date() }, { state_name: "New Hampshire", state_abbv: "NH", createdAt: new Date(), updatedAt: new Date() }, { state_name: "New Jersey", state_abbv: "NJ", createdAt: new Date(), updatedAt: new Date() }, { state_name: "New Mexico", state_abbv: "NM", createdAt: new Date(), updatedAt: new Date() }, { state_name: "New York", state_abbv: "NY", createdAt: new Date(), updatedAt: new Date() }, { state_name: "North Carolina", state_abbv: "NC", createdAt: new Date(), updatedAt: new Date() }, { state_name: "North Dakota", state_abbv: "ND", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Northern Mariana Islands", state_abbv: "MP", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Ohio", state_abbv: "OH", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Oklahoma", state_abbv: "OK", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Oregon", state_abbv: "OR", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Palau", state_abbv: "PW", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Pennsylvania", state_abbv: "PA", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Puerto Rico", state_abbv: "PR", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Rhode Island", state_abbv: "RI", createdAt: new Date(), updatedAt: new Date() }, { state_name: "South Carolina", state_abbv: "SC", createdAt: new Date(), updatedAt: new Date() }, { state_name: "South Dakota", state_abbv: "SD", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Tennessee", state_abbv: "TN", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Texas", state_abbv: "TX", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Utah", state_abbv: "UT", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Vermont", state_abbv: "VT", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Virgin Islands", state_abbv: "VI", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Virginia", state_abbv: "VA", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Washington", state_abbv: "WA", createdAt: new Date(), updatedAt: new Date() }, { state_name: "West Virginia", state_abbv: "WV", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Wisconsin", state_abbv: "WI", createdAt: new Date(), updatedAt: new Date() }, { state_name: "Wyoming", state_abbv: "WY", createdAt: new Date(), updatedAt: new Date() }]
+  const breweryTypes = ['micro', "nano", 'regional', 'brewpub', 'large', 'planning', 'bar', 'contract', 'proprietor', 'closed']
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BreweryContainer states={states} breweryTypes={breweryTypes} />
   );
 }
 
